@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Hero section */
+.hero {
+  width: 100%;
+  height: 90vh;
+  background: url("./IMG/winx.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 3rem;
+  background: #c66a99a8;
+  padding: 20px 40px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Navbar */
+nav {
+  background: #d48154;
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #333;
+}
+
+/* Team section */
+.team {
+  padding: 60px 10%;
+  background: #eed7d1;
+}
+.team h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+.member {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+.member.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease;
+}
+.member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+.member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+.member:hover img {
+  transform: scale(1.05);
+}
+
+/* About + Philosophy */
+.about {
+  padding: 60px 10%;
+  background-color: #fff7f7;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+.about img {
+  width: 300px;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+.about img.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.about-text {
+  flex: 1;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease;
+}
+.about-text.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.about-text h2 {
+  margin-bottom: 15px;
+}
+
+.philosophy {
+  padding: 60px 15%;
+  background: #eed7d1;
+  text-align: center;
+}
+.philosophy blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #333;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.philosophy blockquote.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.philosophy p {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.2s;
+}
+.philosophy p.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
