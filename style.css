@@ -10,7 +10,7 @@
 .hero {
   width: 100%;
   height: 90vh;
-  background: url("./IMG/winx.jpg") center/cover no-repeat;
+  background: url("./IMG/shin.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +71,10 @@ nav a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(40px);
+}
+.member p{
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .member.show {
   opacity: 1;
