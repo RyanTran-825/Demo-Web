@@ -18,13 +18,29 @@ const revealOnScroll = () => {
 };
 
 document.addEventListener("DOMContentLoaded", revealOnScroll);
-
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("resize", revealOnScroll);
 
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
+const closeBtn = document.getElementById("close-btn");
 
 menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
+  navLinks.classList.add("show");
+  closeBtn.style.display = "block";
+});
+
+closeBtn.addEventListener("click", () => {
+  navLinks.classList.remove("show");
+  closeBtn.style.display = "none";
+});
+
+// Thêm sự kiện click cho các link trong menu để tự động đóng menu
+const navLinksItems = document.querySelectorAll(".nav-links a");
+
+navLinksItems.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+    closeBtn.style.display = "none";
+  });
 });
